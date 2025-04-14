@@ -60,7 +60,6 @@ body {
 /* Navbar Desktop */
 nav {
     display: flex;
-    padding: 10px;
     justify-content: space-around;
     align-items: center;
     background-color: var(--Terceiro);
@@ -69,6 +68,7 @@ nav {
     top: 0;
     width: 100%;
     transition: var(--transition);
+    padding: 10px;
 }
 
 nav.scrolled {
@@ -122,6 +122,7 @@ nav ul {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    height: 100%;
 }
 
 nav a {
@@ -140,6 +141,10 @@ nav li {
 nav a:hover li {
     color: var(--Terceiro);
     transform: translateY(-2px);
+    background-color: #001f6b;
+    border-radius: 20px 0;
+    transition: .2s all ease-out;
+    padding: 10px;
 }
 
 nav a::after {
@@ -147,10 +152,10 @@ nav a::after {
     position: absolute;
     width: 0;
     height: 2px;
-    background: var(--Terceiro);
+    background: var(--Segundo);
     bottom: -5px;
     left: 0;
-    transition: var(--transition);
+    transition: .2s all ease-out;
 }
 
 nav a:hover::after {
@@ -332,7 +337,7 @@ nav{
 @keyframes fadeInLeft {
     from {
         opacity: 0;
-        transform: translateX(-500px);
+        transform: translateX(-100%);
     }
 
     to {
@@ -518,6 +523,7 @@ nav{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    animation: fadeInRight 3s ease-out;
 }
 
 .sectionLogo {
@@ -622,6 +628,7 @@ nav{
     margin-bottom: 8px;
     position: relative;
     padding-left: 15px;
+    list-style: none;
 }
 
 .textoSection1 li::before {
@@ -735,6 +742,7 @@ nav{
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideInLeft 5s ease-out;
 }
 
 .projeto-card:hover {
@@ -1023,18 +1031,20 @@ nav{
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1600px;
+    margin: auto;
     padding: 0 20px;
 }
 
 .footer-top {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    justify-items: center;
     padding-bottom: 50px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 
 .footer-brand .logo {
     color: #ffffff;
@@ -1054,12 +1064,13 @@ nav{
     color: rgba(255, 255, 255, 0.7);
     font-size: 16px;
     margin-bottom: 25px;
-    line-height: 1.5;
+    line-height:.1;
 }
 
 .social-links {
     display: flex;
     gap: 15px;
+    justify-content: center;
 }
 
 .social-icon {
@@ -1081,8 +1092,15 @@ nav{
     transform: translateY(-3px);
 }
 
+.footer-links{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
 .links-column {
     margin-bottom: 20px;
+    width: 350px;
 }
 
 .links-title {
@@ -1103,6 +1121,8 @@ nav{
     height: 2px;
     background-color: #002FA7;
 }
+
+
 
 .links-column ul {
     list-style: none;
@@ -1125,6 +1145,9 @@ nav{
     padding-left: 5px;
 }
 
+.footer-contact{
+    width: 330px;
+}
 .contact-title {
     color: #ffffff;
     font-size: 18px;
@@ -1222,4 +1245,21 @@ nav{
     .links-column {
         margin-bottom: 30px;
     }
+
+    .footer-links{
+        flex-wrap: wrap;
+    }
+}
+
+section{
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 2s;
+
 }
