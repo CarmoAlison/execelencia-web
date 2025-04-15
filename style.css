@@ -515,6 +515,7 @@ nav{
     align-items: center;
     gap: 30px;
     background-color: #f8f9fa;
+    box-shadow: 10px 10px 5px #000;
 }
 
 .section1Texto {
@@ -1330,4 +1331,22 @@ section{
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.3s; /* Delay adicional para o overlay */
+}
+
+.button{
+    display:flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#buttonPortifolio{
+    padding: 10px;
+    background-color: #002FA7;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    margin: auto;
+    transition: var(--transitionButton);
+    animation: pulse 1s infinite;
 }
