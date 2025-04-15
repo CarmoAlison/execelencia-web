@@ -213,15 +213,70 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-const myObserver = new IntersectionObserver((entries) => {
-   entries.forEach( (entry) =>{
-    if(entry.isIntersecting){
-        entry.target.classList.add('show')
-    }else{
-        entry.target.classList.remove('show')
-    }
-   })
-})
-const elements = document.querySelectorAll('section')
-elements.forEach((element) => myObserver.observe(element))
+// const myObserver = new IntersectionObserver((entries) => {
+//    entries.forEach( (entry) =>{
+//     if(entry.isIntersecting){
+//         entry.target.classList.add('show')
+//     }else{
+//         entry.target.classList.remove('show')
+//     }
+//    })
+// })
+// const elements = document.querySelectorAll('section')
+// elements.forEach((element) => myObserver.observe(element))
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuração do IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                // Aplica a animação com delay específico de cada elemento
+                const delay = entry.target.dataset.animationDelay || '0';
+                setTimeout(() => {
+                    entry.target.classList.add('visivel');
+                }, delay);
+            } else {
+                entry.target.classList.remove('visivel');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observar todos os elementos com animação
+    document.querySelectorAll('.aparece-ao-rolar').forEach((element, index) => {
+        // Define um delay progressivo para cada elemento (0.1s, 0.2s, 0.3s)
+        element.dataset.animationDelay = `${index * 100}`;
+        observer.observe(element);
+    });
+});
+// Configuração do IntersectionObserver para os cards de projeto
+const observerProjetos = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            const delay = entry.target.dataset.animationDelay || '0';
+            setTimeout(() => {
+                entry.target.classList.add('visivel');
+            }, delay);
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Aplicar aos cards de projeto
+document.querySelectorAll('.projeto-card').forEach((card, index) => {
+    card.classList.add('aparece-ao-rolar');
+    card.dataset.animationDelay = `${index * 100 + 200}`; // Delay maior que a seção anterior
+    observerProjetos.observe(card);
+});
+
+// Aplicar ao cabeçalho da seção
+const headerProjetos = document.querySelector('.projetos-section .section-header');
+if(headerProjetos) {
+    headerProjetos.classList.add('aparece-ao-rolar');
+    headerProjetos.dataset.animationDelay = '50';
+    observerProjetos.observe(headerProjetos);
+}
