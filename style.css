@@ -514,8 +514,25 @@ nav{
     width: 100%;
     align-items: center;
     gap: 30px;
-    background-color: #f8f9fa;
-    box-shadow: 10px 10px 5px #000;
+    position: relative; /* Necessário para o pseudo-elemento */
+    overflow: hidden; /* Esconde o borrão que ultrapassar a seção */
+    box-shadow: 2px 2px 30px #000;
+}
+
+#section1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("imagens/LOGO BRANCA.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: blur(7px); /* Ajuste o valor para mais ou menos borrão */
+    z-index: -1; /* Mantém o borrão atrás do conteúdo */
+    opacity: 0.5; /* Opcional: reduz a opacidade para suavizar */
 }
 
 .section1Texto {
