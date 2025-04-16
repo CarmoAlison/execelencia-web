@@ -62,20 +62,28 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--Terceiro);
     position: fixed;
     z-index: 999;
-    top: 0;
-    width: 100%;
+    top: 10px;
+    width: 50%;
     transition: var(--transition);
     padding: 10px;
+    background-color:#ffffff;
+    backdrop-filter: blur(200px); /* Efeito de blur */
+    -webkit-backdrop-filter: blur(200px); /* Para compatibilidade com Safari */
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: inset 0 2px 5px #002FA7;
 }
 
 nav.scrolled {
     padding: 5px 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 5px #002FA7;
+
+    /* background-color: #ffffff; */
 }
 
+/* Restante do seu CSS permanece igual */
 .logo-header {
     display: flex;
     gap: 10px;
@@ -85,7 +93,7 @@ nav.scrolled {
 .logo-header hr {
     width: 2px;
     border: none;
-    background-color: #000000;
+    background-color: #002FA7;
 }
 
 .logo-header img {
@@ -111,6 +119,7 @@ nav.scrolled {
     font-style: normal;
     margin-top: -10px;
     animation: fadeInRight 1s ease-out;
+    color: #000000;
 }
 
 nav.scrolled .logo-header img {
@@ -132,16 +141,16 @@ nav a {
 
 nav li {
     list-style: none;
-    color: var(--Quinto);
+    color: #002FA7;
     font-weight: 700;
     transition: var(--transition);
     padding: 5px 10px;
 }
 
 nav a:hover li {
-    color: var(--Terceiro);
+    color: #ffffff;
     transform: translateY(-2px);
-    background-color: #001f6b;
+    background-color: #002FA7;
     border-radius: 20px 0;
     transition: .2s all ease-out;
     padding: 10px;
@@ -152,7 +161,7 @@ nav a::after {
     position: absolute;
     width: 0;
     height: 2px;
-    background: var(--Segundo);
+    background: #002FA7;
     bottom: -5px;
     left: 0;
     transition: .2s all ease-out;
@@ -217,9 +226,6 @@ header {
     /* Fallback */
 }
 
-nav{
-    background-color: #ffffff;
-}
 
 .header-informa {
     position: relative;
@@ -610,8 +616,9 @@ nav{
 }
 
 .textoSection1:hover {
-    box-shadow: 0 10px 25px rgba(0, 47, 167, 0.2);
+    box-shadow: 5px 10px 10px #033ed4;
     border-color: #001f6b;
+    transform: translateY(-10px);
 }
 
 .textoSection1 h1 {
@@ -1366,4 +1373,230 @@ section{
     margin: auto;
     transition: var(--transitionButton);
     animation: pulse 1s infinite;
+}
+
+ /* --- ESTILOS GERAIS --- */
+ .exclusivo-premium {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* --- TÍTULO E SUBTÍTULO --- */
+.titulo-destaque {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.titulo-destaque span {
+    color: #4361ee;
+    position: relative;
+}
+.titulo-destaque span::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #4361ee, #3a0ca3);
+    border-radius: 2px;
+}
+.subtitulo {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.subtitulo strong {
+    font-weight: 600;
+    color: #333;
+}
+
+/* --- LISTA DE BENEFÍCIOS --- */
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 35px;
+}
+.beneficio-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: #666;
+    font-size: 16px;
+    gap: 12px;
+}
+.beneficio-item.ativo {
+    color: #333;
+    font-weight: 500;
+}
+.icone-check {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #e6f0ff;
+    border-radius: 50%;
+    position: relative;
+}
+.beneficio-item.ativo .icone-check {
+    background: #4361ee;
+}
+.icone-check::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: white;
+    opacity: 0;
+}
+.beneficio-item.ativo .icone-check::before {
+    opacity: 1;
+}
+
+/* --- BOTÃO DESTAQUE --- */
+.botao-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #4361ee, #3a0ca3);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+.botao-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+.botao-cta svg {
+    transition: transform 0.3s ease;
+}
+.botao-cta:hover svg {
+    transform: translateX(3px);
+}
+
+/* --- DESTAQUES DE CITAÇÃO --- */
+.destaque-citacao {
+    background: #f8f9ff;
+    border-left: 4px solid #4361ee;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 15px;
+    position: relative;
+}
+.destaque-citacao p {
+    margin: 0;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+.destaque-citacao strong {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+.aspas {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 50px;
+    color: rgba(67, 97, 238, 0.1);
+    font-family: serif;
+    line-height: 1;
+}
+
+ /* Estilos Gerais */
+ .valores-empresa {
+    padding: 80px 20px;
+    background: linear-gradient(90deg, #002FA7,#000000)
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-secao {
+    text-align: center;
+    font-size: 65px;
+    color: #ffffff;
+    margin-bottom: 60px;
+    position: relative;
+    font-weight: 700;
+}
+
+.titulo-secao::after {
+    content: '';
+    display: block;
+    width: 800px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffffff, #ffffff);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid de Valores */
+.grid-valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Cards */
+.card-valor {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.card-valor:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icone-valor {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.titulo-valor {
+    font-size: 1.5rem;
+    color: #2b2d42;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.descricao-valor {
+    color: #6c757d;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .grid-valores {
+        grid-template-columns: 1fr;
+    }
+    
+    .titulo-secao {
+        font-size: 2rem;
+    }
 }
