@@ -24,6 +24,14 @@ body {
     overflow-x: hidden;
 }
 
+#reestrito{
+    background-color: #002FA7;
+    padding: 10px;
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: 2px 2px 2px #9b9a9a;
+}
+
 /* Menu Mobile (inicialmente escondido) */
 .menu-mobile {
     display: none;
@@ -128,9 +136,9 @@ nav.scrolled {
     color: #000000;
 }
 
-nav.scrolled .logo-header img {
+/* nav.scrolled .logo-header img {
     width: 80px;
-}
+} */
 
 nav ul {
     display: flex;
@@ -415,7 +423,6 @@ header {
 
     .header-foto img {
         max-width: 400px;
-        display: none;
     }
 }
 
@@ -551,7 +558,7 @@ header {
     gap: 30px;
     position: relative; /* Necessário para o pseudo-elemento */
     overflow: hidden; /* Esconde o borrão que ultrapassar a seção */
-    box-shadow: 2px 2px 30px #000;
+
 }
 
 #section1::before {
@@ -1302,6 +1309,9 @@ header {
 
     .footer-links{
         flex-wrap: wrap;
+    }
+    #reestrito{
+        display: none;
     }
 }
 
