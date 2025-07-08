@@ -334,7 +334,8 @@ header {
 .header-texto {
     padding: 20px;
     font-size: 20px;
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     color: var(--Quarto);
     animation: fadeInLeft 1s ease-out;
     border-radius: 20px;
@@ -693,7 +694,8 @@ header {
     animation: fadeInRight 1s ease-out;
     transition: all 0.3s ease;
     animation: fadeInRight 1s ease-out;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .informaSection1:hover {
@@ -858,6 +860,7 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 .section-header {
@@ -1537,7 +1540,7 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     font-family: 'Inter', 'Helvetica Neue', sans-serif;
     border: 1px solid rgba(0, 0, 0, 0.03);
-
+    width: 100%;
 }
 
 /* --- TÍTULO E SUBTÍTULO --- */
@@ -1703,6 +1706,7 @@ section {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .titulo-secao {
@@ -1717,7 +1721,8 @@ section {
 .titulo-secao::after {
     content: '';
     display: block;
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     height: 4px;
     background: linear-gradient(90deg, #ffffff, #ffffff);
     margin: 15px auto 0;
