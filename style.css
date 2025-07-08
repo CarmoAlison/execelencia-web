@@ -37,7 +37,6 @@ body {
     display: none;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
     background-color: var(--Terceiro);
     position: fixed;
     width: 100%;
@@ -1774,4 +1773,41 @@ section {
     .titulo-secao {
         font-size: 2rem;
     }
+
+      /* Seção 1 */
+  #section1 {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .section1Texto {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .informaSection1 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .iconeSection1 {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    justify-content: center;
+  }
+
+  .textoSection1 {
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .links-column, .footer-contact {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
